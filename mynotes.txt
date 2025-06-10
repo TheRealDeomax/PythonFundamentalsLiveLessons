@@ -1,0 +1,22 @@
+wget https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
+
+bash Anaconda3-2024.02-1-Linux-x86_64.sh
+
+source ~/anaconda3/bin/activate
+
+conda update conda
+
+Do you wish to update your shell profile to automatically initialize conda?
+This will activate conda on startup and change the command prompt when activated.
+If you'd prefer that conda's base environment not be activated on startup,
+   run the following command when conda is activated:
+
+conda config --set auto_activate_base false
+
+You can undo this by running `conda init --reverse $SHELL`? [yes|no]no
+
+
+Creating a custom environment
+1. Create a new environment named py3_12
+'conda create --name py3_12 python=3.12 ipympl ipython jupyterlab matplotlib nodejs numpy seaborn'
+2. 'conda activate py3_12'

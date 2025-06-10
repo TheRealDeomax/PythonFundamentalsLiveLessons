@@ -1,5 +1,8 @@
 # RollDieDynamic.py
 """Dynamically graphing frequencies of die rolls."""
+import matplotlib
+matplotlib.use('Agg')  # Use a non-interactive backend
+
 from matplotlib import animation
 import matplotlib.pyplot as plt
 import random 
@@ -40,7 +43,10 @@ die_animation = animation.FuncAnimation(
     figure, update, repeat=False, frames=number_of_frames, interval=33,
     fargs=(rolls_per_frame, values, frequencies))
 
-plt.show()  # display window
+# Save the animation to a file instead of displaying it
+die_animation.save('die_roll_animation.mp4', writer='ffmpeg')
+
+print("Animation saved as 'die_roll_animation.mp4'")
 
 
 #**************************************************************************
